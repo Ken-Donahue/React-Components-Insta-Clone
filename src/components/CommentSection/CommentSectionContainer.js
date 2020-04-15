@@ -8,11 +8,12 @@ import dummyData from '../../dummy-data'
 console.log(dummyData)
 const CommentSection = props => {
   // Add state for the comments
+  let [comments, setComments] = useState(props.comments)
   return (
     <div>
       {/* map through the comments data and return the Comment component */}
       {
-        props.comments.map((comment, index) => <Comment comment={comment} key ={index}/>)
+        comments.map((comment, index) => <Comment comment={comment} key ={index}/>)
       }
       <CommentInput />
     </div>
